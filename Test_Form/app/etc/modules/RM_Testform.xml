@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <RM_Testform> <!-- вложность папки и название модуля-->
+            <active>true</active>
+            <codePool>local</codePool>
+        </RM_Testform>
+    </modules>
+</config>

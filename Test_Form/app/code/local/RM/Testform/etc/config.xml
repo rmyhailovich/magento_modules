@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <RM_Testform>
+            <version>1.0.0</version>
+        </RM_Testform>
+    </modules>
+
+    <frontend>
+        <routers>
+            <testform>
+                <use>standard</use>
+                <args>
+                    <module>RM_Testform</module>
+                    <frontName>contact-us</frontName>
+                </args>
+            </testform>
+        </routers>
+        <layout>
+            <updates>
+                <testform>
+                    <file>testform.xml</file>
+                </testform>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <helpers>
+            <testform>
+                <class>RM_Testform_Helper</class>
+            </testform>
+        </helpers>
+
+        <template>
+            <email>
+                <testformsetting_testform_testformtemplate module="testform">
+                        <label>Advance Contact Form</label>
+                        <file>testform/testform.html</file>
+                        <type>html</type>
+                </testformsetting_testform_testformtemplate>
+            </email>
+	    </template>
+
+        <models>
+            <testform>
+                <class>RM_Testform_Model</class>
+                <resourceModel>testform_resource</resourceModel>
+            </testform>
+
+            <testform_resource>
+                <class>RM_Testform_Model_Resource</class>
+                <entities>
+                    <table_testform>
+                        <table>testform</table>
+                    </table_testform>
+                </entities>
+            </testform_resource>
+        </models>
+
+        <resources>
+            <testform_setup>
+                <setup>
+                    <module>RM_Testform</module>
+                </setup>
+            </testform_setup>
+        </resources>
+
+    </global>
+
+    <default>
+            <testformsetting>
+                <testform>
+                     <testformtemplate>testformsetting_testform_testformtemplate</testformtemplate>
+                </testform>
+            </testformsetting>
+    </default>
+</config>
